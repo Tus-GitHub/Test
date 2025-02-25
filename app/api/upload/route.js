@@ -5,11 +5,11 @@ import User from "@/app/models/User";
 export async function POST(req){
     await connectDB();
     try{
-        const {name, age, email} = await req.json();
-        if (!name || !age || !email) {
+        const {name, age, email, imageUrl} = await req.json();
+        if (!name || !age || !email || !imageUrl) {
             return Response.json({ message: "Fill every detail" }, { status: 400 });
         }
-        const person = new User({name, age, email});
+        const person = new User({name, age, email, imageUrl});
         await person.save();
         return Response.json({message:"User uploaded succesfully"}, {status:201});
     }catch(error){
