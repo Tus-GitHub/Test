@@ -1,5 +1,5 @@
 'use client';
-
+// This is only for practice
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Detail from "./component/Detail";
